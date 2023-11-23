@@ -1,5 +1,5 @@
 {
-  "name": "Memorybot",
+  "name": "memorybot",
   "version": "1.0.0",
   "description": "A helpful assistant that remembers good stuff from Discord for you.",
   "main": "index.js",
