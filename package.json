@@ -1,0 +1,14 @@
+{
+  "name": "memorybot",
+  "version": "1.0.0",
+  "description": "A helpful assistant that remembers good stuff from Discord for you.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "compromise": "^14.10.1",
+    "discord.js": "^14.14.1",
+    "tracery-grammar": "^2.7.4"
+  }
+}
