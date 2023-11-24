@@ -22,13 +22,13 @@ console.groupEnd();
 
 
 /* COMPROMISE: Language Input */
-let input = nlp("I'm a sleepy rabbit and I want a hot chocolate.");
+let input = nlp("We are building a Discord bot that'll make things easier.");
 
 console.groupCollapsed("Compromise Tests");
 	console.log("Original: " + input.text());
-	input.nouns().toPlural();
-	console.log("Plural: " + input.text());
 	input.verbs().toPastTense();
 	console.log("Past: " + input.text());
+	input.nouns().toPlural();
+	console.log("Plural: " + input.text());
 	console.log("Nouns: " + input.match('#Noun').text());
 console.groupEnd();
