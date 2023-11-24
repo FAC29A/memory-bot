@@ -10,5 +10,8 @@
     "compromise": "^14.10.1",
     "discord.js": "^14.14.1",
     "tracery-grammar": "^2.7.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.54.0"
   }
 }
