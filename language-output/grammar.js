@@ -1,4 +1,4 @@
-{
+let example = {
 	"name": ["Arjun","Yuuma","Darcy","Mia","Chiaki","Izzi","Azra","Lina"],
 	"animal": ["unicorn","raven","sparrow","scorpion","coyote","eagle","owl","lizard","zebra","duck","kitten"],
 	"occupationBase": ["wizard","witch","detective","ballerina","criminal","pirate","lumberjack","spy","doctor","scientist","captain","priest"],
@@ -14,3 +14,9 @@
 	"story": ["#hero# the #heroJob# #setSailForAdventure#. #openBook#"],
 	"origin": ["Once upon a time, #[#setCharacter#]story#"]
 }
+
+let test = {
+
+}
+
+module.exports = {example, test};
