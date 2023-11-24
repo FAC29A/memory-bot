@@ -1,24 +1,20 @@
-/* IMPORT MODULES
-	Node doesn't handle modules. Use require instead. So this:
-		import * as grammar from language-output/grammar.js;
-	becomes this:
-		const grammar = require('./language-output/grammar.js');
-*/
+/* IMPORT MODULES */
 const grammar = require('./language-output/grammar.js');
 const tracery = require('tracery-grammar');
+
 
 /* DISCORD.JS */
 
 
-/* COMPROMISE
-Language Input */
+/* COMPROMISE: Language Input */
 
 
-/* TRACERY
-Language Output
-https://github.com/galaxykate/tracery/tree/tracery2 */
+/* TRACERY: Language Output */
 
-let gramExample = tracery.createGrammar(grammar.example);//grammar.json
-let textExpansion = gramExample.flatten("#origin#");
+/* let grammarExample = tracery.createGrammar(grammar.example);
+let outputExample = grammarExample.flatten("#origin#");
+console.log(outputExample); */
 
-console.log(textExpansion);
+let grammarFac = tracery.createGrammar(grammar.fac29a);
+let outputFac = grammarFac.flatten("#gossip#");
+console.log(outputFac);
