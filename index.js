@@ -1,8 +1,9 @@
 /* IMPORT MODULES */
+require('dotenv').config();
+
 const grammar = require('./language/grammar.js');
 const tracery = require('tracery-grammar');
 const nlp = require('compromise');
-
 
 /* DISCORD.JS */
 
