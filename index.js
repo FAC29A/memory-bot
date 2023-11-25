@@ -1,6 +1,7 @@
 /* IMPORTS */
 // Local Files
 require('dotenv').config();
+const { token } = require('./.env');
 
 // Node Files
 const fs = require('node:fs');
@@ -14,7 +15,6 @@ const grammar = require('./language/grammar.js');
 
 // Discord Files
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
-const { DISCORD_TOKEN } = require('./.env');
 
 
 /* LANGUAGE */
@@ -74,7 +74,7 @@ client.once(Events.ClientReady, c => {
 	console.log(`Ready! Logged in as ${c.user.tag}`);
 });
 
-client.login(DISCORD_TOKEN);
+client.login(token);
 
 // handle slash commands
 client.on(Events.InteractionCreate, async interaction => {
