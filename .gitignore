@@ -15,3 +15,6 @@
 # Optional: build/output directory
 /dist
 /build
+
+# MacOS specific
+.DS_Store
