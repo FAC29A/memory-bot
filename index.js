@@ -13,22 +13,22 @@ const nlp = require('compromise');
 let outputExample = grammarExample.flatten("#origin#");
 console.log(outputExample); */
 
-let grammarFac = tracery.createGrammar(grammar.fac29a);
-let outputFac = grammarFac.flatten("#gossip#");
+const grammarFac = tracery.createGrammar(grammar.fac29a);
+const outputFac = grammarFac.flatten('#gossip#');
 
-console.groupCollapsed("Tracery Tests");
-	console.log("Gossip: " + outputFac);
+console.groupCollapsed('Tracery Tests');
+console.log('Gossip: ' + outputFac);
 console.groupEnd();
 
 
 /* COMPROMISE: Language Input */
-let input = nlp("We are building a Discord bot that'll make things easier.");
+const input = nlp('We are building a Discord bot that\'ll make things easier.');
 
-console.groupCollapsed("Compromise Tests");
-	console.log("Original: " + input.text());
-	input.verbs().toPastTense();
-	console.log("Past: " + input.text());
-	input.nouns().toPlural();
-	console.log("Plural: " + input.text());
-	console.log("Nouns: " + input.match('#Noun').text());
+console.groupCollapsed('Compromise Tests');
+console.log('Original: ' + input.text());
+input.verbs().toPastTense();
+console.log('Past: ' + input.text());
+input.nouns().toPlural();
+console.log('Plural: ' + input.text());
+console.log('Nouns: ' + input.match('#Noun').text());
 console.groupEnd();
