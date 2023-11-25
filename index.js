@@ -75,12 +75,20 @@ client.on('messageCreate', async (message) => {
 		message.channel.send('Hello there!');
 	}
 
+	// Tracery Grammars
+	const grammarFac = tracery.createGrammar(grammar.fac29a);
 	if (command === 'gossip') {
-		const grammarFac = tracery.createGrammar(grammar.fac29a);
 		const gossip = grammarFac.flatten('#gossip#');
 		message.channel.send(gossip);
+	} else if (command === 'help') {
+		const help = grammarFac.flatten('#help#');
+		message.channel.send(help);
+	} else if (command === 'propaganda') {
+		const propaganda = grammarFac.flatten('#propaganda#');
+		message.channel.send(propaganda);
 	}
 
+	// Compromise Analysis
 	if (command === 'analyse') {
 		const inputText = args.join(' ');
 		if (!inputText) {
@@ -89,24 +97,32 @@ client.on('messageCreate', async (message) => {
 		}
 
 		const input = nlp(inputText);
-		const verbsToPast = input.clone();
-		verbsToPast.verbs().toPastTense();
+		const verbsToPast = input.clone()
+			.verbs()
+			.toPastTense();
 		const pastSentence = verbsToPast.out('text');
 
-		const nounsToPlural = input.clone();
-		nounsToPlural.nouns().toPlural();
+		const nounsToPlural = input.clone()
+			.nouns()
+			.toPlural();
 		const pluralSentence = nounsToPlural.out('text');
 
-		const nouns = input.match('#Noun').out('array').join(', ');
+		const nouns = input
+			.match('#Noun')
+			.out('array')
+			.join(', ');
 
 		const response =
-      `Original: ${inputText}\n` +
-      `Past: ${pastSentence}\n` +
-      `Plural: ${pluralSentence}\n` +
-      `Nouns: ${nouns || 'None found'}`;
+			`You said ${inputText}\n` +
+			`In past tense, it would be ${pastSentence}\n` +
+			`We can pluralise everything and say ${pluralSentence}\n` +
+			`You used several nouns... ${nouns || 'Oh wait. Nope. None.'}\n`;
 		message.channel.send(response);
 	}
 
+	// Burmese Transliteration
+
+	// Memes
 	if (command === 'meme') {
 		try {
 			const response = await axios.get(memeApiUrl);
